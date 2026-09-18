@@ -7,6 +7,25 @@ follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 The version number shown here matches the `<meta name="app-version">` tag in
 `index.html` and the `v{version}` badge in the page's footer.
 
+## [0.5.0] — 2026-09-17
+
+### Added
+- **Role-based access control (RBAC), ported from zwispqosp v0.6.0.** `admins.role` is now one of
+  `viewer` (read-only, the default for any newly-added admin), `country_admin` (read/write, scoped
+  to the site codes in `admins.scope`), or `global_admin` (full read/write across every country,
+  but only while break-glass is switched on). A "Global Admin · break-glass ON/OFF" badge now sits
+  next to "Signed in as…" in the header, with a toggle for eligible global admins, logged to a new
+  `admin_audit_log` table on every activation/deactivation via the `toggle_break_glass()` RPC. The
+  moderation-delete, ISP-license-save, and translation approve/reject actions now check
+  `canWrite(site)` client-side first; the real enforcement is server-side RLS shared across all
+  five country apps (`has_write_access(site)` / `is_global_admin()`).
+
+### Fixed
+- **The site-selector dropdown/header only showed a country once it had a live row in
+  `qos_reports`** — since Zambia had none yet, the dropdown rendered blank instead of showing
+  "Zambia (zm)". `populateSiteSelect()` now always seeds every known country from `SITE_LABELS`
+  up front, so this app (and the other four) show their own country correctly from first load.
+
 Changelog file introduced with this release. Earlier history (v0.1.0 initial launch through the
 v0.3.1 this app carried before this update) was not previously recorded here — see `git log` for
 the raw commit history; this app has always been kept as a copy of the shared `zwispqosp` template
