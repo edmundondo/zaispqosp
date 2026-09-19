@@ -7,6 +7,14 @@ follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 The version number shown here matches the `<meta name="app-version">` tag in
 `index.html` and the `v{version}` badge in the page's footer.
 
+## [0.5.1] — 2026-09-18
+
+### Added
+- Malawi (`mw`) added to `SITE_LABELS`/`MISSING_LANGS`/`PROVIDER_DIRECTORY` (this app is kept as a
+  byte-identical copy of `zwispqosp` aside from title/version/`currentSite`). See `zwispqosp`'s
+  CHANGELOG v0.6.1 entry for the full detail; the new `maispqosp` repo (v0.1.0) is Malawi's own
+  copy of this same admin app.
+
 ## [0.5.0] — 2026-09-17
 
 ### Added
