@@ -7,6 +7,16 @@ follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 The version number shown here matches the `<meta name="app-version">` tag in
 `index.html` and the `v{version}` badge in the page's footer.
 
+## [0.7.0] — 2026-09-23
+
+### Added
+- Raw CSV export can now download **`customers`** (follow-up phone numbers, E.164) and
+  **`customer_emails`** (follow-up emails) for the selected site.
+
+### Fixed
+- CSV export neutralises spreadsheet formula injection in visitor-typed text (cells starting with
+  `=`, `+`, `-`, `@`), while leaving `+263…`-style phone numbers readable.
+
 ## [0.6.0] — 2026-09-23
 
 ### Added
