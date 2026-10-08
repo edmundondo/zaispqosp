@@ -7,6 +7,12 @@ follows [Semantic Versioning](https://semver.org/) (MAJOR.MINOR.PATCH).
 The version number shown here matches the `<meta name="app-version">` tag in
 `index.html` and the `v{version}` badge in the page's footer.
 
+## [0.7.1] — 2026-10-07
+
+### Changed
+- `PROVIDER_DIRECTORY.bw` synced with `bwispqosd` v1.6.0: BOCRA 2025 Annual Report figures (Orange 46%,
+  Mascom 40%, BTC 14%; Starlink 8,075 connections, now BOCRA-sourced).
+
 ## [0.7.0] — 2026-09-23
 
 ### Added
